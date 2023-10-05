@@ -5,11 +5,9 @@ import { useState } from "react";
 const Todos = () => {
   const todos = useSelector((state) => state.todos);
   const [isEditing, setEditing] = useState(false);
-  const [show, setShow] = useState(true);
   const [state, setState] = useState({
     id: "",
     text: "",
-    contentError: null,
   });
 
   const onEditToggle = (id, text) => {
@@ -28,17 +26,20 @@ const Todos = () => {
     });
   };
   const dispatch = useDispatch();
-  const { id, text } = state;
+
+  const { text, id } = state;
+
   const editInput = () => {
-    dispatch(updateTodo(text, id));
+    dispatch(updateTodo({ text, id }));
     setEditing(false);
   };
+
   return (
     <>
       <div>
         {isEditing ? (
           <div className="form">
-            <h2>Update your today plan </h2>
+            <h2>Update your today plan</h2>
             <input
               type="text"
               value={text}
