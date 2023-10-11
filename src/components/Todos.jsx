@@ -39,7 +39,7 @@ const Todos = () => {
       <div>
         {isEditing ? (
           <div className="flex h-100%">
-            <h2>Update your today plan</h2>
+            <h2 className="text-xl font-bold mr-6 ">Update your today plan</h2>
             <input
               type="text"
               value={text}

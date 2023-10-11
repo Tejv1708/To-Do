@@ -4,7 +4,7 @@ import Todos from "./components/Todos";
 function App() {
   return (
     <>
-      <div className=" flex flex-col justify-center items-center">
+      <div className=" flex flex-col justify-center items-center font-bold text-xl">
         <h1 className="text-2xl font-bold m-3">TO DO </h1>
         <AddTodo />
         <Todos />
