@@ -38,7 +38,7 @@ const Todos = () => {
     <>
       <div>
         {isEditing ? (
-          <div className="form">
+          <div className="flex h-100%">
             <h2>Update your today plan</h2>
             <input
               type="text"
@@ -46,18 +46,29 @@ const Todos = () => {
               name="text"
               onChange={handleChange}
             />
-            <button type="button" className="button" onClick={editInput}>
+            <button
+              type="button"
+              className="h-10 bg-slate-400 w-40"
+              onClick={editInput}
+            >
               Edit
             </button>
           </div>
         ) : (
           <ul>
-            Todos
             {todos.map((todo) => (
               <li key={todo.id}>
                 {todo.text}
-                <button onClick={() => dispatch(removeTodo(todo.id))}>X</button>
-                <button onClick={() => onEditToggle(todo.id, todo.text)}>
+                <button
+                  className=" w-40 mx-4 p-3 mt-3 bg-red-600"
+                  onClick={() => dispatch(removeTodo(todo.id))}
+                >
+                  Delete
+                </button>
+                <button
+                  className="w-40 mx-4 p-3 bg-slate-500"
+                  onClick={() => onEditToggle(todo.id, todo.text)}
+                >
                   Edit
                 </button>
               </li>

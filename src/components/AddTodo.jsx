@@ -19,8 +19,14 @@ const AddTodo = () => {
         placeholder="todo"
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        className="p-3 border-solid text-2xl"
       />
-      <button onClick={addTodoHandler}>Add</button>
+      <button
+        className="bg-blue-400 w-40 mx-4 p-3  rounded "
+        onClick={addTodoHandler}
+      >
+        Add
+      </button>
     </div>
   );
 };
